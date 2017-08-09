@@ -1,0 +1,67 @@
+.slide-img {
+	width: 100%;
+	max-height: 750px;
+}
+
+.hover-slide {
+    position: absolute;
+    margin: 0 auto;
+    top: 85%;
+    z-index: 10;
+}
+
+.view-btn {
+	color: white;
+	background-color: darkgrey; 
+	border: none;
+}
+
+.article-image {
+	width: 100%;
+}
+
+.glyphicon {
+	color: black;
+	margin-right: 2%;
+	font-size: 20px;
+}
+
+.glyphicon:hover {
+	color: darkred;
+}
+
+.icons {
+	text-align: right; 
+}
+
+#comment-area {
+	height: 100px;
+	width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+	.hover-slide {
+	  left: 44%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.hover-slide {
+	  left: 42%;
+	  top: 82%;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.hover-slide {
+	  left: 40%;
+	  top: 82%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.hover-slide {
+	  left: 37%;
+	  top: 80%;
+	}
+}
