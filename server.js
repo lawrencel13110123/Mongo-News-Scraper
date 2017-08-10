@@ -12,6 +12,8 @@ var Article = require("./models/article.js");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
+// Launch App
+var port = process.env.PORT || 3000;
 
 // Initialize Express for debugging & body parsing
 var app = express();
@@ -29,7 +31,15 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/fashion-scraper");
+var databaseUri = "mongodb://localhost/fashion-scraper";
+
+if (process.env.MONGODB_URI) {
+	// console.log("using myLab")
+	mongoose.connect(process.env.MONGODB_URI)
+} else {
+	// console.log("using local")
+	mongoose.connect(databaseUri)
+}
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -46,8 +56,7 @@ db.once("open", function() {
 // bodyParser is what provides you with req.body
 require("./controllers/controller")(app);
 
-// Launch App
-var port = process.env.PORT || 3000;
 app.listen(port, function(){
   console.log('Running on port: ' + port);
 });
+
