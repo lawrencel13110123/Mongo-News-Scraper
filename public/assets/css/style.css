@@ -39,9 +39,35 @@
 	width: 100%;
 }
 
+.notification {
+	z-index: 10;
+	color: white;
+	background-color: black; 
+	opacity: 0.5; 
+}
+
+.viewMore {
+	width: 100%;
+	background-color: orange; 
+	border: none;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.comment-remove {
+	float: right;
+}
+
+.wall { 
+	height: 350px;
+}
+
 @media screen and (max-width: 991px) {
 	.hover-slide {
 	  left: 44%;
+	}
+	.wall { 
+		height: 600px;
 	}
 }
 
@@ -50,6 +76,9 @@
 	  left: 42%;
 	  top: 82%;
 	}
+	.wall { 
+		height: 580px;
+	}
 }
 
 @media screen and (max-width: 640px) {
@@ -57,11 +86,17 @@
 	  left: 40%;
 	  top: 82%;
 	}
+	.wall { 
+		height: 500px;
+	}
 }
 
 @media screen and (max-width: 480px) {
 	.hover-slide {
 	  left: 37%;
 	  top: 80%;
+	}
+	.wall { 
+		height: 420px;
 	}
 }

@@ -15,7 +15,6 @@ mongoose.Promise = Promise;
 
 // Initialize Express for debugging & body parsing
 var app = express();
-require("./controllers/controller")(app);
 
 app.use(logger("dev"));
 app.use(bodyParser.urlencoded({
@@ -43,7 +42,9 @@ db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
-
+// put require at the end because it has to go through bodyParser first
+// bodyParser is what provides you with req.body
+require("./controllers/controller")(app);
 
 // Launch App
 var port = process.env.PORT || 3000;

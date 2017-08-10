@@ -10,6 +10,7 @@ var ArticleSchema = new Schema({
   // title is a required string
   title: {
     type: String,
+    unique: true, 
     required: true
   },
   // link is a required string
@@ -28,7 +29,11 @@ var ArticleSchema = new Schema({
   comments: [{
     type: Schema.Types.ObjectId,
     ref: "Comment"
-  }]
+  }], 
+  saved: {
+    type: Boolean, 
+    default: false
+  }
 });
 
 // Create the Article model with the ArticleSchema
